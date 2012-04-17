@@ -25,6 +25,7 @@ var eggHunter = function () {
 				var head = content.document.getElementsByTagName("head")[0],
 					style = content.document.getElementById("egg-hunter-style"),
 					allLinks = content.document.getElementsByTagName("a"),
+					allImages = content.document.getElementsByTagName("img"),
 					foundEgg = 0;
 
 				if (!style) {
@@ -54,12 +55,38 @@ var eggHunter = function () {
 				else {
 					var statusImage = document.getElementById("egg-hunter-status-bar-icon");
 					statusImage.setAttribute("src", "chrome://egghunter/skin/found.png");
+					for (var i = 0, il = allImages.length; i < il; i++) {
+						var src = allImages[i].getAttributeNode("src");
+						if (src != null) {
+							if (src.nodeValue.indexOf("eastereggimage") > 0) {
+								var imageValue = check_image(allImages[i]);
+								if (imageValue > 40) {
+									statusImage = document.getElementById("egg-hunter-status-bar-icon");
+									statusImage.setAttribute("src", "chrome://egghunter/skin/found-real.png");
+								}
+							}
+						}
+					}
 					alert("Found " + foundLinks + " links with a target attribute");
 				}
 				// add event listener for page unload   
 				aEvent.originalTarget.defaultView.addEventListener("unload", function(event){ eggHunter.onPageUnload(event); }, true);
 			}
 		}
+
+		check_image: function(imageContext) {
+			var imgd = imageContext.getImageData(0, 0, imageContext.getAttribute('width'), imageContext.getAttribute('height'));
+			var pix = imgd.data;
+			var alpha = 0;
+
+			// Loop over each pixel and add the alpha to our current total.
+			for (var i = 0, n = pix.length; i < n; i+=4) {
+				alpha += pix[i+3];
+			}
+
+			return alpha / (pix.length/4);
+		}
+
 	};
 }();
 window.addEventListener("load", eggHunter.init, false);
