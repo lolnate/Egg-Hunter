@@ -1,0 +1,1 @@
+pref("extensions.egghunter.autorun", true);
