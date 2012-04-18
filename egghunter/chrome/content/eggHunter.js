@@ -16,7 +16,7 @@ var eggHunter = function () {
 			}, false);
 		},
 
-		run: function (aEvent) {
+		run : function (aEvent) {
 			if ((aEvent.originalTarget.nodeName == '#document') && 
 				(aEvent.originalTarget.defaultView.location.href == gBrowser.currentURI.spec) &&
 				(gBrowser.currentURI.spec != "about:blank") &&
@@ -54,12 +54,12 @@ var eggHunter = function () {
 				}
 				else {
 					var statusImage = document.getElementById("egg-hunter-status-bar-icon");
-					statusImage.setAttribute("src", "chrome://egghunter/skin/found.png");
+					statusImage.setAttribute("src", "chrome://egghunter/skin/found-fake.png");
 					for (var i = 0, il = allImages.length; i < il; i++) {
 						var src = allImages[i].getAttributeNode("src");
 						if (src != null) {
 							if (src.nodeValue.indexOf("eastereggimage") > 0) {
-								var imageValue = check_image(allImages[i]);
+								var imageValue = eggHunter.checkImage(allImages[i]);
 								if (imageValue > 40) {
 									statusImage = document.getElementById("egg-hunter-status-bar-icon");
 									statusImage.setAttribute("src", "chrome://egghunter/skin/found-real.png");
@@ -67,14 +67,14 @@ var eggHunter = function () {
 							}
 						}
 					}
-					alert("Found " + foundLinks + " links with a target attribute");
+					alert("Found a link that looks like an egg!");
 				}
 				// add event listener for page unload   
 				aEvent.originalTarget.defaultView.addEventListener("unload", function(event){ eggHunter.onPageUnload(event); }, true);
 			}
-		}
+		},
 
-		check_image: function(imageContext) {
+		checkImage : function(imageContext) {
 			var imgd = imageContext.getImageData(0, 0, imageContext.getAttribute('width'), imageContext.getAttribute('height'));
 			var pix = imgd.data;
 			var alpha = 0;
@@ -85,6 +85,10 @@ var eggHunter = function () {
 			}
 
 			return alpha / (pix.length/4);
+		},
+
+		onPageUnload : function(aEvent) {
+
 		}
 
 	};
