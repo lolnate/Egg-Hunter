@@ -107,7 +107,16 @@ for ( var i = 0, il = allLinks.length; i < il; i++) {
 			elm.className += ((elm.className.length > 0) ? " " : "")
 					+ "egg-hunter-selected";
 			foundEgg++;
-			var eggURL = "http://www.torn.com/" + href.nodeValue;
+                        
+                        oldHTML = elm.innerHTML;
+                        var newHTML = "<span style='outline: 3px solid red'>" + oldHTML + "</span>";
+                        elm.innerHTML = newHTML;
+                        elm.scrollIntoView(true);
+                        var eggURL = "http://www.torn.com/" + href.nodeValue;
+                        
+                        if(confirm("Click the egg?")) {
+                            window.content.location.href = eggURL;
+                        }
 		}
 	}
 
