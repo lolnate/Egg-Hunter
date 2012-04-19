@@ -1,0 +1,211 @@
+#wrapper {
+	width: 100%;
+	min-width: 450px !important;
+	}
+	
+#contentWrapper {
+	width: 90%;
+	margin: 0 auto;
+	padding: 0px;
+	}
+	
+#noteBox {
+	width: 90%;
+	margin: 8px 0 5px 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	background-color: #F3F3F3;
+	line-height: 20px;
+	text-align: left;
+	padding: 5px;
+	}	
+	
+.infoHeader {
+	width: 100%;
+	height: 25px;
+	background-color: #2d2d2d;
+	color: #fff;
+	font-size: 14px;
+	line-height:25px;
+	text-align: left;
+	padding: 0 10px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	}
+	
+.column{
+	width: 49.2% !important;
+	min-width: 100px;
+	min-height: 700px;
+	vertical-align: top;
+	float: left;
+	border: none;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	}
+	
+.column:nth-child(1){
+	float: right;
+	}
+
+.column .dragbox{
+	margin:5px 0px 12px;
+	/*background:#f3f3f3;
+	position:relative;*/
+	}
+	
+.column .dragbox h2{
+	margin:0;
+	font-size:12px;
+	padding:5px;
+	background:#2d2d2d;
+	color:#fff;
+	text-align: left;
+	cursor:move;
+	}
+
+.dragbox-content{
+	color: #000;
+	text-align: left;
+	min-height:20px; 
+	font-size:1em; 
+	line-height:1.5em;
+	overflow: auto;
+	}
+
+.column .placeholder{
+	background: #f0f0f0;
+	border:1px dashed #ddd;
+	color: #000;
+	}
+
+.dragbox h2.collapse{
+	background:#2d2d2d url('/images/home/collapse.png') no-repeat top right;
+	}
+
+.dragbox h2 .configure{
+	font-size:11px;
+	font-weight:normal;
+	margin-right:30px;
+	float:right;
+	}
+
+.success{
+	background:#d9f9e0;
+	border:1px solid #339933;
+	padding:5px;
+	font-weight:bold;
+	}
+	
+#equippedWeapons {
+	text-align: center;
+	}
+	
+#equippedWeapons img{
+	margin: 2px 2px 0px 2px;
+	}
+
+#propertyImage {
+	text-align: center;
+	display: block;
+	}
+	
+#propertyImage img{
+	max-width: 350px;
+	}
+	
+#perks {
+	width: 100%;
+	height: 115px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	}
+
+	
+#mainInfo {
+	position: relative;
+	width: 100%;
+	min-width: 720px;
+	text-align: left;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	}
+	
+#genInfoHeader {
+	position: relative;
+	width: 100%;
+	height: 25px;
+	background-color: #2d2d2d;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	color: #fff;
+	font-size: 14px;
+	line-height:25px;
+	text-align: left;
+	padding: 0 10px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	}
+
+#mainInfoTop {
+	width: 100%;
+	overflow: auto;
+	padding: 10px 0 0 0;
+	margin-bottom: 10px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	}
+
+#equippedItems img {
+	display: block;
+	border: 2px solid black;
+	margin: 0 10px 10px 0;
+	float: left;
+	}
+	
+
+.left, .right {
+	float: left;
+	width: 50%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	/*text-align: left;*/
+	}
+	
+.dropDownMenu {
+	position: relative;
+	width: 100%;
+	float: left;
+	}
+	
+.headerDivImg, .contentDivImg, .contentDivImg_ {
+	float: left;
+	width: 99%;
+	text-align: left;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	 }
+	
+.titleTextImg {
+	float: left;
+	font-size: 1.2em;
+	margin: 5px 10px;
+	}	
+	
+.headerDivImg {
+	background-color: #2d2d2d;
+	color: #fff;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	}
+	
+.contentDivImg, .contentDivImg_ {
+	background-color: #f3f3f3;
+	}
+
+.headerDivImg img {
+	float: right;
+	margin: 7px;
+	}
+
+	

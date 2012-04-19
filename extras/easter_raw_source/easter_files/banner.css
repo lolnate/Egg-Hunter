@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+body {margin:0; padding:0;}
+
+#banner {float:left; font-size: 14px; color: #3C3C3D; background-color:#222; width:100%;}
+.shadow {-moz-box-shadow: -3px 1px 3px #222; -webkit-box-shadow: -3px 1px 3px #222; box-shadow: -3px 1px 3px #222;}
+#searchForm {margin:0;padding:0;}
+#TornLogo {float:left;width:120px; height:48px; margin:0px 0px 0px 42px;}
+
+#headerUtils {margin-right:10px;margin-top:1px}
+
+#searchbox {clear:both;float:left; margin:3px 0px 0px 0px;}
+#searchbox .search {padding:2px; width:185px; background:#222 url(/images/bg-search-field.png) 0 0 repeat-x; border:1px solid #333; color:#ccc; margin:0px 3px 0px 0px;}
+#searchbox .searchtype {margin-right:4px;padding:1px; background-color:#222; color:#ccc; text-decoration; none; border:1px solid #333;}
+
+#headerLinks {float:left; font-size: 11px; color: #CCC;}
+#headerLinks a, #searchbox a {color: #CCC;font-size: 11px; text-decoration:none;}
+#headerLinks a:hover, #searchbox a:hover, #headerLinks a.invert {color: #666; text-decoration:none;}
+
+#headerLinks .profilelink {float:left; width:150px;border:1px solid #222;}
+
+#headerLinks .quicklink-container {float:left; width:210px; border:1px solid #222;}
+#headerLinks .quicklinks {float:right;}
+#headerLinks .quicklinks a {margin-right:3px;}
+
+#searchbox a.button { text-transform:uppercase;display: inline-block; padding:1px 8px 1px 5px; font-size: 12px; color: #3C3C3D; text-shadow: 1px 1px 0 #FFFFFF; background: #ECECEC url('/images/css3buttons_backgrounds1.png') 0 0 no-repeat; white-space: nowrap; overflow: visible; cursor: pointer; text-decoration: none; border: 1px solid #CACACA; -webkit-border-radius: 2px; -moz-border-radius: 2px; -webkit-background-clip: padding-box; border-radius: 2px; outline: none; position: relative; zoom: 1; *display: inline; }
+#searchbox a.button:hover { color: #FFFFFF; border-color: #999999; text-decoration: none; text-shadow: -1px -1px 0 rgba(0,0,0,0.3); background-position: 0 -200px; background-color: #b8b8b8; }
+#searchbox a.button:active,
+#searchbox a.button.active { background-position: 0 -240px; border-color: #878787; background-color: #606060; color: #FFFFFF; text-shadow: none; }
+#searchbox a.button:active { top: 1px;}
+
+#searchbox a.button.negative:hover { color: #FFFFFF; background-position: 0 -121px; background-color: #D84743; border-color: #911D1B; }
+#searchbox a.button.negative:active,
+#searchbox a.button.negative.active { background-position: 0 -161px; background-color: #A5211E; border-color: #911D1B; }
+
+#searchbox a.button span.icon { display: inline-block; width: 14px; height: 12px; margin: auto 3px auto auto; position: relative; top: 1px; background-image: url('/images/css3buttons_icons1.png'); background-repeat: no-repeat; }
+#searchbox a.button span.icon.magnifier { background-position: -1px 0px }
+#searchbox a.button:hover span.icon.magnifier { background-position: -17px 0px }
+
+.hide {display:none; visibility:hidden;}
+.fleft {float:left;}
+.fright {float:right;}
+.b {font-weight:bold;}

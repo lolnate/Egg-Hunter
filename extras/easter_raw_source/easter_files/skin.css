@@ -1,0 +1,12 @@
+#egg-hunter-toolbar-button {
+	list-style-image: url("chrome://egg-hunter/skin/toolbar-large.png");
+}
+
+#egg-hunter-status-bar-icon {
+	width: 79px;
+	margin: 0 5px;
+}
+
+.egg-hunter-selected {
+	outline: 2px solid red !important;
+}

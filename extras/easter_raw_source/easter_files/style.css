@@ -1,0 +1,27 @@
+/*
+body, td {
+font-family:helvetica, arial, geneva, sans-serif;
+color: #000000;
+font-size: 12px;
+}
+input, textarea, select{
+	color : #000000;
+	font-style: normal;
+        font-size:  12px;
+	border-collapse: collapse; 
+	border: 1px solid #000000;
+}
+.maintable {border: 1px #003366 solid; background-color: #FFFFFF; width: 90%; padding: 0px;font-family: Verdana,Sans-serif;font-size: 12px;} 
+.regrow {font-family: Verdana,Sans-serif; color: #000000; font-weight: bold; background-color: #FFFFFF;} 
+.headline {font-family: Verdana,Sans-serif;font-weight: bold;color: #FFFFFF;background-color: #003366;font-size: 11px} 
+.mainrow {font-family: Verdana,Sans-serif; color: #000000;background-color: #F2F2F2;font-size: 14px} 
+.maintables {border: 1px #003366 solid; background-color: #FFFFFF; width: 120px; padding: 0px;font-family: Verdana,Sans-serif;font-size: 12px;} 
+
+.head_tr{background: #454545;}
+.head_td{padding: 5px; margin: 2px; color: #dcdadb; text-align: left; font-weight: bold; font-size: 14px;}
+
+.odd{background: #ededed; }
+.even{background: #dddddd; }
+.simple_td{padding: 5px; margin: 2px; text-align: left; font-weight: bold; font-size: 14px; }
+.roulette_wrapper .table.TD.red{color: #ba0a0a;}
+*/

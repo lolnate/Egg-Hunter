@@ -1,0 +1,532 @@
+/*
+ * jquery.mb.components
+ * Copyright (c) 2001-2010. Matteo Bicocchi (Pupunzi); Open lab srl, Firenze - Italy
+ * email: mbicocchi@open-lab.com
+ * site: http://pupunzi.com
+ *
+ * Licences: MIT, GPL
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ */
+
+.extruder{
+  position:fixed;
+  cursor:default;
+  background:url("../elements/extruder_blank.png");
+}
+
+.extruder .header{
+  height:27px;
+}
+
+.extruder .content{
+  display:none;
+  background: url("../elements/extruder_bgnd.png") repeat-y bottom left;
+
+}
+
+/*.extruder.open .content{
+  -moz-box-shadow:#999 2px 1px 5px;
+  -webkit-box-shadow:#999 2px 1px 5px;
+}*/
+
+
+.extruder .footer{
+  display:none;
+  height:10px;
+  background:#000;
+  -moz-border-radius: 0 0 8px 8px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-box-shadow:#999 2px 1px 5px;
+  -webkit-box-shadow:#999 2px 1px 5px;
+}
+
+/*extruder TOP*/
+
+.extruder.top .flap{
+  color:white;
+  text-shadow: #333 2px 2px 2px;
+  font:16px/18px Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  text-align:center;
+  display: none;
+  margin:auto;
+  padding:2px 5px 2px 5px;
+  height:24px;
+  width:240px;
+  background:#AA0000;
+  -moz-border-radius:0 0 10px 10px;
+  -webkit-border-bottom-left-radius:10px;
+  -webkit-border-bottom-right-radius:10px;
+  -moz-box-shadow:#999 2px 1px 5px;
+  -webkit-box-shadow:#999 2px 1px 5px;
+  cursor:pointer;
+}
+
+.extruder.top .content{
+/*
+  -moz-border-radius: 0 0 10px 10px;
+  -webkit-border-bottom-left-radius:10px;
+  -webkit-border-bottom-right-radius:10px;
+  -moz-box-shadow:#999 2px 1px 3px;
+  -webkit-box-shadow:#999 2px 1px 3px;
+ */
+}
+
+
+/*extruder BOTTOM*/
+.extruder.bottom .flap{
+  position:relative;
+  color:white;
+  text-shadow: #333 2px 2px 2px;
+  font:18px/28px Arial, Helvetica, sans-serif;
+  text-align:center;
+  display:block;
+  margin:auto;
+  margin-top:1px;
+  padding:0 5px 5px 5px;
+  height:30px;
+  width:180px;
+  background:#000;
+  -moz-border-radius:10px 10px 0 0;
+  -webkit-border-top-left-radius:10px;
+  -webkit-border-top-right-radius:10px;
+  -moz-box-shadow:#999 2px 0px 2px;
+  -webkit-box-shadow:#999 2px 0px 2px;
+  /*background:url("../elements/extruder_flap.png") no-repeat top center;*/
+  cursor:pointer;
+}
+
+.extruder.bottom .footer{
+  -moz-border-radius:10px 10px 0 0 ;
+  -webkit-border-top-left-radius:10px;
+  -webkit-border-top-right-radius:10px;
+  position:relative;
+  margin-top:-5px;
+}
+
+.extruder.bottom .content{
+  -moz-border-radius:10px 10px 0 0 ;
+  -webkit-border-top-left-radius:10px;
+  -webkit-border-top-right-radius:10px;
+}
+
+.extruder.bottom .ext_wrapper{
+  bottom:0;
+}
+
+
+/*extruder LEFT*/
+
+.extruder.left{
+  height:100%;
+  background:url("../elements/extruder_blank.png");
+}
+
+.extruder.left.open .content{
+  -moz-box-shadow:#999 2px 0px 5px;
+  -webkit-box-shadow:#999 2px 0px 5px;
+}
+
+
+.extruder.left .content{
+  border-right:3px solid #000;
+}
+
+
+.extruder.left .ext_wrapper{
+  height:100%;
+}
+
+.extruder.left .footer{
+  display:none;
+}
+
+.extruder.left .flap{
+  font-size:18px;
+  color:white;
+  top:0;
+  padding:10px 0 10px 10px;
+  margin-right:-37px;
+  background:#000;
+  width:30px;
+  position:absolute;
+  right:0;
+  -moz-border-radius:0 10px 10px 0;
+  -webkit-border-top-right-radius:10px;
+  -webkit-border-bottom-right-radius:10px;
+  -moz-box-shadow:#999 2px 0px 5px;
+  -webkit-box-shadow:#999 2px 0px 5px;
+}
+
+.extruder.left .flap .flapLabel{
+  background:#000;
+}
+
+
+
+/*extruder RIGHT*/
+
+.extruder.right{
+  /*position:absolute;*/
+  height:100%;
+  background:url("../elements/extruder_blank.png");
+}
+
+.extruder.right .content{
+  /*display:none;*/
+  border-left:3px solid #000;
+}
+
+.extruder.right.open .content{
+  -moz-box-shadow:#999 -2px 0px 5px;
+  -webkit-box-shadow:#999 -2px 0px 5px;
+}
+
+.extruder.right .ext_wrapper{
+  height:100%;
+  right:0;
+}
+
+.extruder.right .footer{
+  display:none;
+}
+
+.extruder.right .flap{
+  font-size:18px;
+  color:white;
+  top:0;
+  padding:10px 0 10px 4px;
+  background:#000;
+  width:30px;
+  /*height:150px;*/
+  position:absolute;
+  /*overflow:hidden;*/
+  left:-30px;
+  -moz-border-radius:10px 0 0 10px;
+  -webkit-border-top-left-radius:10px;
+  -webkit-border-bottom-left-radius:10px;
+  -moz-box-shadow:#999 -2px 0px 5px;
+  -webkit-box-shadow:#999 -2px 0px 5px;
+}
+
+.extruder.right .flap .flapLabel{
+  background:#000;
+}
+
+
+
+
+
+
+
+/*Extruder Content*/
+
+  .extruder .voice {
+    font:18px/18px Arial, Helvetica, sans-serif;
+    color:white;
+    padding:5px;
+    padding-left:10px;
+    height:27px;
+    border-bottom:1px solid #333;
+    background:url("../elements/extruder_blank.png") no-repeat bottom left;
+    text-shadow:#333 2px 2px 2px;
+	text-align:left;
+  }  
+  
+  .extruder .voice a{
+    font:18px/18px Arial, Helvetica, sans-serif;
+    color:white;
+    padding:5px;
+    padding-left:10px;
+    height:27px;
+    background:url("../elements/extruder_blank.png") no-repeat bottom left;
+    text-shadow:#333 2px 2px 2px;
+	text-align:left;
+  }
+    
+  .extruder .voice:last-child{
+    border-bottom:none;
+  }
+
+ .extruder .voice .disabled{
+   cursor:default;
+   background:url("../elements/mission-padlock.png") top right no-repeat;
+  }
+.extruder .text{
+    background:#222;
+    font:14px/16px Arial, Helvetica, sans-serif;
+    color:gray;
+    padding:10px;
+    text-shadow:#000 2px 2px 2px;
+	text-align:left;	
+   /* background:#fff;
+    font:14px/16px Arial, Helvetica, sans-serif;
+    color:#222;
+    padding:5px;
+    border-bottom:1px solid #333;
+	line-height:normal;
+  text-align:left;*/
+  }
+
+.extruder.top .text{
+  background-color:transparent;
+  font:12px/14px Arial, Helvetica, sans-serif;
+  color:#e4e4e4;
+  padding:1px;
+  line-height:normal;
+  text-align:left;
+  text-shadow: none;
+  }
+
+ 
+.extruder.top .topBannerImg {float:left; width:30px; height:50px; display:block;}
+.extruder.top .topBannerText {float:left; text-align:left;margin-left:5px; width:345px;font-size:11px; font-weight:normal;}
+.extruder.top .topBannerText a, .topBannerText a:visited {font-size:11px;}
+.extruder.top .topBannerTitle {text-transform:uppercase; font-weight:bold;}
+.extruder.top .topBannerCta {color:#eb1218; text-decoration:underline;font-weight:bold;}
+
+  .extruder .voice.hover{
+    background:url("../elements/extruder_voiceHover.png") no-repeat top;
+  }
+
+  .extruder .voice.sel{
+    background:url("../elements/extruder_voiceHover.png") no-repeat top;
+  } 
+
+  .extruder .voice img, .extruder .text img{
+    float:left;
+    margin-right:5px;
+  }
+
+  .extruder .voice a.label{
+    display:block;
+    height:30px;
+    color:white;
+    padding-top:0px;
+    text-decoration:none;
+  }
+
+  .extruder .voice span.label{
+    display:block;
+    height:30px;
+    color: #d0cfcf;
+    padding-top:0px;
+    text-decoration:none;
+  }
+
+  .extruder .voice{
+    position:relative;
+  }
+
+  .extruder .settingsBtn{
+    display:block;
+    position:absolute;
+    width:36px;
+    height:36px;
+    background: url("../elements/settingsBtn.png") no-repeat bottom;
+    cursor:pointer;
+    right:-3px;
+    top:-4px;
+    /*z-index:1000;*/
+  }
+
+  .extruder .optionsPanel{
+    /*background: url("../elements/optionsPanel.png") no-repeat bottom;*/
+    background: url("../elements/fuzz.gif");
+    display:none;
+    border-bottom:1px solid #333;
+	text-align:left;
+  }
+  
+ .extruder .optionsPanel div.task-closed {
+	 text-decoration:line-through;
+	 color:#ccc;
+	 background: url("../elements/task-tick.png") 5px 5px no-repeat;
+  }
+  
+ .extruder .optionsPanel div.task-closed a, .extruder .optionsPanel div.next-mission a, .extruder .optionsPanel div.missions-complete a{  
+  	 padding-left:35px;
+ }
+
+ .extruder .optionsPanel div.task-open {
+	 color:#fff;
+	 font-weight:bold;
+  }
+  
+ .extruder .optionsPanel div.next-mission {
+	 color:#fff;
+	 font-weight:bold;
+	 text-decoration:underline;
+	 background: url("../elements/next-mission.png") 5px 5px no-repeat;
+  }  
+  
+ .extruder .optionsPanel div.missions-complete {
+	 color:#fff;
+	 font-weight:bold;
+	 text-decoration:underline;
+	 background: url("../elements/missions-complete.png") 5px 5px no-repeat;
+  }
+    
+  /*Extruder Panel*/
+
+  .optionsPanel .panelVoice a{
+    text-decoration:none;
+    display:block;
+    color:#cccccc;
+    padding:8px;
+    padding-left:20px;
+    font-size:16px;
+    text-shadow:#333 1px 1px 1px;
+    border-bottom:1px solid #444;
+    cursor:pointer;
+  }
+  .optionsPanel .panelVoice a:hover{
+    color:#fff;
+    /*background: #666666;*/
+    background: url("../elements/red_op_50.png");
+  }
+
+:focus {
+	outline: 0;
+}
+
+    .wrapper{
+      position:relative;
+      font-family:Arial, Helvetica, sans-serif;
+      padding-top:90px;
+      padding-left:50px;
+      width:80%;
+      margin:auto
+    }
+    .wrapper .text{
+      font-family:Arial, Helvetica, sans-serif;
+      padding-top:50px;
+    }
+    .wrapper h1{
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:26px;
+    }
+    .longText{
+      margin-top:20px;
+      width:600px;
+      font:18px/24px Arial, Helvetica, sans-serif;
+      color:gray;
+    }
+    span.btn{
+      padding:10px;
+      display:inline-block;
+      cursor:pointer;
+      font:12px/14px ['Arial, Helvetica, sans-serif'] bold;
+      color:#fff;
+      background-color:#CC0000;
+      -moz-border-radius:10px;
+      -webkit-border-radius:10px;
+      -moz-box-shadow:#999 2px 0px 3px;
+      -webkit-box-shadow:#999 2px 0px 3px;
+    }
+    span.btn:hover{
+      background-color:#000;
+    }
+
+      /*
+      custom style for extruder
+      */
+
+    .extruder.left.a .flap{
+      font-size:18px;
+      color:white;
+      top:0;
+      padding:10px 0 10px 10px;
+      background:#772B14;
+      width:30px;
+      position:absolute;
+      right:0;
+      -moz-border-radius:0 10px 10px 0;
+      -webkit-border-top-right-radius:10px;
+      -webkit-border-bottom-right-radius:10px;
+      -moz-box-shadow:#666 2px 0px 3px;
+      -webkit-box-shadow:#666 2px 0px 3px;
+    }
+
+    .extruder.left.a .content{
+      border-right:3px solid #772B14;
+    }
+
+    .extruder.top .optionsPanel .panelVoice a:hover{
+      color:#fff;
+      background: url("elements/black_op_30.png");
+      border-bottom:1px solid #000;
+    }
+    .extruder.top .optionsPanel .panelVoice a{
+      border-bottom:1px solid #000;
+    }
+
+    .extruder.left.a .flap .flapLabel{
+      background:#772B14;
+    }
+	
+  #extruderComps .voice {
+	font:12px/12px Arial, Helvetica, sans-serif;
+    color:white;
+	height:0px;
+    padding:0px;
+    padding-left:0px;
+    border-bottom:none;
+    background-image:none;
+    text-shadow:none;
+	text-align:left;
+  }
+  
+  #extruderComps .voice.sel{
+    background-image:none;
+  } 
+  
+  #extruderComps .settingsbtn {
+	display: none;
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	background-image: none;
+	cursor: pointer;
+	right: 0px;
+	top:0px;
+  }
+  
+  #extruderComps .optionsPanel{
+    background-image: none;
+    display:none;
+    border-bottom:none;
+	text-align:left;
+  } 
+
+  #extruderComps .textHeading { 	
+  	font:32px/32px Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-shadow: 1px 1px 1px #000;
+  }
+  
+	#extruderComps .text {
+		background: none;
+		font: 14px/18px Arial, Helvetica, sans-serif;
+		color: #fff;
+		padding:5px 0px 0px 0px;
+		text-shadow: 1px 1px 1px #000;
+		text-align: left;
+		overflow:hidden;
+	} 
+	 
+	#extruderComps .textLarger {
+  	font:20px/26px Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-shadow: 1px 1px 1px #000;
+	}   
+  
+  .entered {color:#093}
+  .notentered {color:#C00}
+  #extruderComps .ftGold {color:gold}
+  #extruderComps .padTop {margin-top:15px;}
+  #extruderComps .padRight {margin-right:22px;}
+  #extruderComps .notFound {opacity:0.2; filter:alpha(opacity = 20); zoom:1;} 
+  #extruderComps .Found {opacity:1; filter:alpha(opacity = 100); zoom:1;} 

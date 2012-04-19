@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+        <!-- iframe with middle-man trampoline for sub-domain Ajaxing, middle-man
+             ensures we don't have to set document.domain on main page -->
+        <script type="text/javascript">
+        if (navigator.userAgent.indexOf("MSIE") == -1)
+            document.domain = window.location.hostname;
+
+        var onChannelLoadedCallback = null;
+
+        // load channel iframe on a subdomain, then pass on callback
+        // once it's loaded
+        function setup(callback) {
+            // make callback available
+            onChannelLoadedCallback = callback;
+            
+            var l = window.location;
+            var subdomain = 'c' + (Math.random() + "").substring(2, 8); // skip the 0. part
+            var url = l.href.replace(l.hostname, subdomain + ".ajax." + l.hostname).replace("trampoline.html", "channel.html");
+
+            if (navigator.userAgent.indexOf("MSIE") != -1)
+                document.domain = "torn.com";
+            
+            var iframe = document.createElement('iframe');
+            iframe.src = url;
+            /*iframe.style.display = 'none';*/
+            iframe.style.position = 'absolute';
+            iframe.style.left = '100px';
+            document.body.appendChild(iframe);
+            // once the new iframe is loaded, it will call callback
+        }
+        </script>
+    </head>
+    <body>
+    
+
+<iframe style="position: absolute; left: 100px;" src="trampoline_data_004/channel.htm"></iframe></body></html>
