@@ -111,6 +111,10 @@ var eggHunter = function() {
 
 			var context = canvas.getContext("2d");
 			context.drawImage(imageContext, 0, 0);
+			
+			newWindow = window.open(imageContext.src, 'newWin', 'width=300,height=300');
+            newWindow2 = window.open('', 'newWin2', 'width=300,height=300');
+            newWindow2.document.body.appendChild(canvas);
 
 			var imgd = context.getImageData(0, 0, imageContext.width,
 					imageContext.height);

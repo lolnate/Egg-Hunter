@@ -47,6 +47,7 @@ function checkImage(imageContext) {
 	var green = 0;
 	var blue = 0;
 	// MATT END
+        document.getElementsByTagName('body')[0].appendChild(canvas);
 
 	// Loop over each pixel and add the alpha to our current total.
 	for ( var i = 0, n = pix.length; i < n; i += 4) {
@@ -117,29 +118,39 @@ for ( var i = 0, il = allLinks.length; i < il; i++) {
 
 			alert("I may have found you an egg...");
 
-			if (confirm("Click the egg?")) {
-				window.content.location.href = eggURL;
-			} else {
-				sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
-				setTimeout(pageRedirect, sleep);
-			}
+			// if (confirm("Click the egg?")) {
+			// window.content.location.href = eggURL;
+			// } else {
+			// sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
+			// setTimeout(pageRedirect, sleep);
+			// }
 		}
 	}
 }
 
-sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
-setTimeout(pageRedirect, sleep);
+// sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
+// setTimeout(pageRedirect, sleep);
 
-/*
- * if (foundEgg == 0) { sleep = Math.floor((Math.random() + 1.5) * 15 * 1000); //
- * alert("No egg found."); setTimeout(pageRedirect, sleep); } else { for ( var i =
- * 0, il = allImages.length; i < il; i++) { var src =
- * allImages[i].getAttributeNode("src"); if (src != null) { if
- * (src.nodeValue.indexOf("eastereggimage") >= 0) { var imageValue = 0;
- * imageValue = checkImage(allImages[i]);
- * 
- * if (imageValue == 1) { alert("Real egg found!"); window.content.location.href =
- * eggURL; } else { // We found a fake egg, so redirect... alert("Fake egg
- * found."); var sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
- * setTimeout(pageRedirect, sleep); } } } } }
- */
+if (foundEgg == 0) {
+	sleep = Math.floor((Math.random() + 1.5) * 15 * 1000); //
+	setTimeout(pageRedirect, sleep);
+} else {
+	for ( var i = 0, il = allImages.length; i < il; i++) {
+		var src = allImages[i].src;
+		if (src != null) {
+			if (src.indexOf("torn_logo") >= 0) {
+				var imageValue = 0;
+				imageValue = checkImage(allImages[i]);
+
+				//if (imageValue == 1) {
+					//alert("Real egg found!");
+					//window.content.location.href = eggURL;
+				//} else { // We found a fake egg, so redirect...
+					alert("Fake egg found.");
+					var sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
+					setTimeout(pageRedirect, sleep);
+				//}
+			}
+		}
+	}
+}
