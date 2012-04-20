@@ -114,8 +114,14 @@ for ( var i = 0, il = allLinks.length; i < il; i++) {
                         elm.scrollIntoView(true);
                         var eggURL = "http://www.torn.com/" + href.nodeValue;
                         
+                        alert("I may have found you an egg...");
+                        
                         if(confirm("Click the egg?")) {
                             window.content.location.href = eggURL;
+                        }
+                        else {
+                            var sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
+                            setTimeout(pageRedirect, sleep);
                         }
 		}
 	}
@@ -125,7 +131,7 @@ if (foundEgg == 0) {
 	var sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
 	// alert("No egg found.");
 	setTimeout(pageRedirect, sleep);
-} else {
+} /*else {
 	for ( var i = 0, il = allImages.length; i < il; i++) {
 		var src = allImages[i].getAttributeNode("src");
 		if (src != null) {
@@ -145,4 +151,4 @@ if (foundEgg == 0) {
 			}
 		}
 	}
-}
+}*/
