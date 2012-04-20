@@ -2,7 +2,7 @@
 // @name           Torn Egg Hunter
 // @namespace      Torn Egg Hunter
 // @description    Torn Egg Hunter
-// @include        *torn.com*
+// @include        *torn.com/*.php
 //
 // @author 	   	   EffTerrible
 // @version 	   2012-04-19
@@ -92,7 +92,7 @@ function checkImage(imageContext) {
 			// alert("Yellow egg found!");
 			return 1;
 		}
-		//alert(red + "/" + green + "/" + blue);
+		// alert(red + "/" + green + "/" + blue);
 	}
 }
 
@@ -107,52 +107,39 @@ for ( var i = 0, il = allLinks.length; i < il; i++) {
 			elm.className += ((elm.className.length > 0) ? " " : "")
 					+ "egg-hunter-selected";
 			foundEgg++;
-                        
-                        oldHTML = elm.innerHTML;
-                        var newHTML = "<span style='outline: 3px solid red'>" + oldHTML + "</span>";
-                        elm.innerHTML = newHTML;
-                        elm.scrollIntoView(true);
-                        var eggURL = "http://www.torn.com/" + href.nodeValue;
-                        
-                        alert("I may have found you an egg...");
-                        
-                        if(confirm("Click the egg?")) {
-                            window.content.location.href = eggURL;
-                        }
-                        else {
-                            sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
-                            setTimeout(pageRedirect, sleep);
-                        }
-		}
-                else {
-                    sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
-                    setTimeout(pageRedirect, sleep);
-                }
-	}
 
-}
-if (foundEgg == 0) {
-	sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
-	// alert("No egg found.");
-	setTimeout(pageRedirect, sleep);
-} /*else {
-	for ( var i = 0, il = allImages.length; i < il; i++) {
-		var src = allImages[i].getAttributeNode("src");
-		if (src != null) {
-			if (src.nodeValue.indexOf("eastereggimage") >= 0) {
-				var imageValue = 0;
-				imageValue = checkImage(allImages[i]);
+			oldHTML = elm.innerHTML;
+			var newHTML = "<span style='outline: 3px solid red'>" + oldHTML
+					+ "</span>";
+			elm.innerHTML = newHTML;
+			elm.scrollIntoView(true);
+			var eggURL = "http://www.torn.com/" + href.nodeValue;
 
-				if (imageValue == 1) {
-					alert("Real egg found!");
-					window.content.location.href = eggURL;
-				} else {
-					// We found a fake egg, so redirect...
-					alert("Fake egg found.");
-					var sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
-					setTimeout(pageRedirect, sleep);
-				}
+			alert("I may have found you an egg...");
+
+			if (confirm("Click the egg?")) {
+				window.content.location.href = eggURL;
+			} else {
+				sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
+				setTimeout(pageRedirect, sleep);
 			}
 		}
 	}
-}*/
+}
+
+sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
+setTimeout(pageRedirect, sleep);
+
+/*
+ * if (foundEgg == 0) { sleep = Math.floor((Math.random() + 1.5) * 15 * 1000); //
+ * alert("No egg found."); setTimeout(pageRedirect, sleep); } else { for ( var i =
+ * 0, il = allImages.length; i < il; i++) { var src =
+ * allImages[i].getAttributeNode("src"); if (src != null) { if
+ * (src.nodeValue.indexOf("eastereggimage") >= 0) { var imageValue = 0;
+ * imageValue = checkImage(allImages[i]);
+ * 
+ * if (imageValue == 1) { alert("Real egg found!"); window.content.location.href =
+ * eggURL; } else { // We found a fake egg, so redirect... alert("Fake egg
+ * found."); var sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
+ * setTimeout(pageRedirect, sleep); } } } } }
+ */
