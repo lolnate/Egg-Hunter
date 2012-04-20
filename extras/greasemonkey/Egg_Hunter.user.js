@@ -97,7 +97,7 @@ function checkImage(imageContext) {
 }
 
 var allLinks = document.getElementsByTagName("a"), allImages = document
-		.getElementsByTagName("img"), foundEgg = 0;
+		.getElementsByTagName("img"), foundEgg = 0, sleep = 0;
 
 for ( var i = 0, il = allLinks.length; i < il; i++) {
 	elm = allLinks[i];
@@ -120,15 +120,19 @@ for ( var i = 0, il = allLinks.length; i < il; i++) {
                             window.content.location.href = eggURL;
                         }
                         else {
-                            var sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
+                            sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
                             setTimeout(pageRedirect, sleep);
                         }
 		}
+                else {
+                    sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
+                    setTimeout(pageRedirect, sleep);
+                }
 	}
 
 }
 if (foundEgg == 0) {
-	var sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
+	sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
 	// alert("No egg found.");
 	setTimeout(pageRedirect, sleep);
 } /*else {
