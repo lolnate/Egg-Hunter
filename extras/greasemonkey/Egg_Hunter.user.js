@@ -58,13 +58,12 @@ function checkImage(imageContext) {
         blue = pix[i + 2];
 
         if(red > 0 || green > 0 || blue > 0) {
-            //alert("Looks like a real egg to me!" + red + "/" + green + "/" + blue);
+            //alert("Looks like a real egg to me! " + red + "/" + green + "/" + blue);
             return 1;
         }
     }
     
     //alert("I guess it wasn't that real after all.");
-    return 0;
 }
 
 var allLinks = document.getElementsByTagName("a"), allImages = document
