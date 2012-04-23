@@ -44,50 +44,43 @@ var eggHunter = function() {
 					if (href != null) {
 						if (href.nodeValue.indexOf("eggfind") > 0) {
 							elm.className += ((elm.className.length > 0) ? " "
-									: "")
-									+ "egg-hunter-selected";
+									: "") + "egg-hunter-selected";
 							foundEgg++;
-							var eggURL = "http://www.torn.com/"
-									+ href.nodeValue;
+							oldHTML = elm.innerHTML;
+						    var newHTML = "<span style='outline: 3px solid red'>" + oldHTML + "</span>";
+						 	elm.innerHTML = newHTML;
+							elm.scrollIntoView(true);
+							var eggURL = "http://www.torn.com/" + href.nodeValue;
 						}
 					}
-
 				}
+				
 				if (foundEgg == 0) {
-					var statusImage = document
-							.getElementById("egg-hunter-status-bar-icon");
-					statusImage.setAttribute("src",
-							"chrome://egghunter/skin/not-found.png");
+					var statusImage = document.getElementById("egg-hunter-status-bar-icon");
+					statusImage.setAttribute("src", "chrome://egghunter/skin/not-found.png");
 					var sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
-					// alert(sleep);
 					setTimeout("eggHunter.pageRedirect()", sleep);
 				} else {
-					var statusImage = document
-							.getElementById("egg-hunter-status-bar-icon");
-					statusImage.setAttribute("src",
-							"chrome://egghunter/skin/found-fake.png");
+					var statusImage = document.getElementById("egg-hunter-status-bar-icon");
+					statusImage.setAttribute("src", "chrome://egghunter/skin/found-fake.png");
 					for ( var i = 0, il = allImages.length; i < il; i++) {
-						var src = allImages[i].getAttributeNode("src");
+						var src = allImages[i].src;
 						if (src != null) {
 							if (src.nodeValue.indexOf("eastereggimage") >= 0) {
 								var imageValue = 0;
 								imageValue = eggHunter.checkImage(allImages[i]);
 
 								if (imageValue == 1) {
-									statusImage = document
-											.getElementById("egg-hunter-status-bar-icon");
-									statusImage
-											.setAttribute("src",
-													"chrome://egghunter/skin/found-real.png");
+									statusImage = document.getElementById("egg-hunter-status-bar-icon");
+									statusImage.setAttribute("src", "chrome://egghunter/skin/found-real.png");
 									alert("Real egg found!");
-									window.content.location.href = eggURL;
+									// Removed for testing.
+									// window.content.location.href = eggURL;
 								} else {
 									// We found a fake egg, so redirect...
 									alert("Fake egg found.");
-									var sleep = Math
-											.floor((Math.random() + 1.5) * 15 * 1000);
-									setTimeout("eggHunter.pageRedirect()",
-											sleep);
+									var sleep = Math.floor((Math.random() + 1.5) * 15 * 1000);
+									setTimeout("eggHunter.pageRedirect()", sleep);
 								}
 							}
 						}
@@ -96,80 +89,50 @@ var eggHunter = function() {
 
 				// add event listener for page unload
 				aEvent.originalTarget.defaultView.addEventListener("unload",
-						function(event) {
-							eggHunter.onPageUnload(event);
-						}, true);
+					function(event) {
+						eggHunter.onPageUnload(event);
+					}, true);
 			}
 		},
 
 		checkImage : function(imageContext) {
-			// MATT BEGIN
-			var canvas = document.createElementNS(
-					'http://www.w3.org/1999/xhtml', 'canvas');
-			canvas.width = imageContext.width;
-			canvas.height = imageContext.height;
-
-			var context = canvas.getContext("2d");
-			context.drawImage(imageContext, 0, 0);
+		    var canvas = document.createElementNS(
+		        'http://www.w3.org/1999/xhtml', 'canvas');
+		    canvas.width = imageContext.width;
+		    canvas.height = imageContext.height;
+		
+		    var context = canvas.getContext("2d");
+		    var egg = new Image();
+		    egg.onload = function () {
+		        context.drawImage(egg, 0, 0);
+		    }
+		    egg.src = imageContext.src;
+		            
+		    newWindow = window.open(imageContext.src, 'newWin', 'width=300,height=300');
+		    newWindow2 = window.open('', 'newWin2', 'width=300,height=300');
+		    newWindow2.document.body.appendChild(canvas);
 			
-			newWindow = window.open(imageContext.src, 'newWin', 'width=300,height=300');
-            newWindow2 = window.open('', 'newWin2', 'width=300,height=300');
-            newWindow2.document.body.appendChild(canvas);
-
-			var imgd = context.getImageData(0, 0, imageContext.width,
-					imageContext.height);
-			var pix = imgd.data;
-			var alpha = 0;
-			var red = 0;
-			var green = 0;
-			var blue = 0;
-			// MATT END
-
-			// Loop over each pixel and add the alpha to our current total.
-			for ( var i = 0, n = pix.length; i < n; i += 4) {
-				red = pix[i];
-				green = pix[i + 1];
-				blue = pix[i + 2];
-
-				// Blue = 75/114/195
-				// Black = 79/79/79
-				// Brown = 134/103/89
-				// Green = 66/145/47
-				// Orange = 184/96/1
-				// Pink = 197/52/192
-				// Red = 195/75/75
-				// White = 161/161/161
-				// Yellow = 132/121/3
-
-				if (red == 75 && green == 114 && blue == 195) {
-					// alert("Blue egg found!");
-					return 1;
-				} else if (red == 79 && green == 79 && blue == 79) {
-					// alert("Black egg found!");
-					return 1;
-				} else if (red == 134 && green == 103 && blue == 89) {
-					// alert("Brown egg found!");
-					return 1;
-				} else if (red == 66 && green == 145 && blue == 47) {
-					// alert("Green egg found!");
-					return 1;
-				} else if (red == 184 && green == 96 && blue == 1) {
-					// alert("Orange egg found!");
-					return 1;
-				} else if (red == 197 && green == 52 && blue == 192) {
-					// alert("Pink egg found!");
-					return 1;
-				} else if (red == 195 && green == 75 && blue == 75) {
-					// alert("Red egg found!");
-					return 1;
-				} else if (red == 161 && green == 161 && blue == 161) {
-					// alert("White egg found!");
-					return 1;
-				} else if (red == 132 && green == 121 && blue == 3) {
-					// alert("Yellow egg found!");
-					return 1;
-				}
-			}
+		    var imgd = context.getImageData(0, 0, imageContext.width,
+		        imageContext.height);
+		    var pix = imgd.data;
+		
+		    var red = 0;
+		    var green = 0;
+		    var blue = 0;
+		
+		    for ( var i = 0, n = pix.length; i < n; i += 4) {
+		        red = pix[i];
+		        green = pix[i + 1];
+		        blue = pix[i + 2];
+		
+		        if(red > 0 || green > 0 || blue > 0) {
+		            //alert("Looks like a real egg to me!" + red + "/" + green + "/" + blue);
+		            return 1;
+		        }
+		    }
+		    
+		    //alert("I guess it wasn't that real after all.");
+		    return 0;
 		},
 
 		pageRedirect : function() {
@@ -191,7 +154,6 @@ var eggHunter = function() {
 			urlArray[14] = "http://www.torn.com/bookie.php";
 
 			var rand = Math.floor(Math.random() * 15);
-			// alert(rand);
 			window.content.location.href = urlArray[rand];
 		},
 
