@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name           Torn Egg Hunter v2
+// @name           Torn Egg Hunter v3
 // @namespace      *torn.com*
-// @description    Torn Egg Hunter v2
+// @description    Torn Egg Hunter v3
 // @include        *torn.com/*.php*
 // ==/UserScript==
 
