@@ -63,11 +63,12 @@ function checkImage(imageContext) {
         }
     }
     
+	return 0;
     //alert("I guess it wasn't that real after all.");
 }
 
 var allLinks = document.getElementsByTagName("a"), allImages = document
-.getElementsByTagName("img"), foundEgg = 0, sleep = 0, i;
+.getElementsByTagName("img"), foundEgg = 0, sleep = 0, i, eggURL;
 
 
 for ( i = 0, il = allLinks.length; i < il; i++) {
@@ -83,7 +84,7 @@ for ( i = 0, il = allLinks.length; i < il; i++) {
             + "</span>";
             elm.innerHTML = newHTML;
             elm.scrollIntoView(true);
-            var eggURL = "http://www.torn.com/" + href.nodeValue;
+            eggURL = "http://www.torn.com/" + href.nodeValue;
         }
     }
 
